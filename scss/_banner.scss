@@ -1,0 +1,247 @@
+.banner {
+    background-color: $red;
+    width: 100%;
+    padding: 0 42px 0 32px;
+    display: flex;
+    &__left {
+        position: relative;
+        width: 50%;
+        &__clock {
+            position: absolute;
+            top: 20px;
+            left: 0;
+        }
+        &__text {
+            position: relative;
+            margin: 50px 0 45px 12.5%;
+            .text-yellow {
+                font-weight: 500;
+                font-size: 60px;
+                line-height: 105%;
+                text-transform: uppercase;
+            }
+            .text-white {
+                font-weight: 300;
+                font-size: 60px;
+                line-height: 105%;
+                text-transform: uppercase;
+            }
+            &__black-flag {
+                position: absolute;
+                top: -18px;
+                left: 282px;
+                padding: 10px;
+                background-color: $dark;
+                .text-flag {
+                    font-weight: 300;
+                    font-size: 24px;
+                    line-height: 31px;
+                    text-transform: uppercase;
+                    span {
+                        font-weight: 500;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-top: 17px solid $dark;
+                        border-right: 17px solid transparent;
+                        left: 0;
+                        bottom: -17px;
+                    }
+                }
+            }
+        }
+        &__circle-delivery {
+            position: absolute;
+            bottom: -10px;
+            left: 435px;
+            width: 106px;
+            height: 106px;
+            border-radius: 100%;
+            background-color: $white;
+            img {
+                width: 37px;
+                height: 37px;
+                position: absolute;
+                top: 15%;
+                left: 38%;
+            }
+            .circle-text {
+                position: absolute;
+                top: 65%;
+                left: 48%;
+                transform: translate(-50%, -50%) rotate(15deg);
+                text-align: center;
+                font-weight: 400;
+                font-size: 15px;
+            }
+        }
+    }
+    &__right {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        padding: 38px 0 40px;
+        &__discount {
+            display: flex;
+            flex-direction: column;
+            &__text {
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 100%;
+                text-transform: uppercase;
+            }
+            &__number {
+                font-weight: 300;
+                font-size: 144px;
+                line-height: 60%;
+                sup {
+                    font-size: 60px;
+                }
+            }
+        }
+        &__timer {
+            display: flex;
+            flex-direction: column;
+            border: 3px solid $white;
+            padding: 24px 35px;
+            min-width: 333px;
+            align-items: center;
+            gap: 16px;
+            .timer-text {
+                font-weight: 300;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+            .timer-box {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-content: space-between;
+                p {
+                    text-align: center;
+                }
+                .dot {
+                    font-weight: 300;
+                    font-size: 36px;
+                }
+                &__item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .days-number,
+                    .hours-number,
+                    .min-number,
+                    .sec-number {
+                        font-weight: 500;
+                        font-size: 36px;
+                    }
+                    .days-text,
+                    .hours-text,
+                    .min-text,
+                    .sec-text {
+                        font-weight: 300;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1299px) {
+        flex-direction: column;
+        align-items: center;
+        &__left {
+            width: 100%;
+            &__circle-delivery {
+                left: 500px;
+            }
+        }
+        &__right {
+            width: 100%;
+        }
+    }
+    @media (max-width: 690px) {
+        padding: 0 15px;
+        &__left {
+            &__text {
+                margin: 50px 0 50px 20px;
+            }
+            &__circle-delivery {
+                left: auto;
+                right: 0;
+            }
+        }
+        &__right {
+            padding: 25px 0 15px;
+            &__discount {
+                &__number {
+                    font-size: 120px;
+                    line-height: 80%;
+                    sup {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 576px) {
+        &__left {
+            &__text {
+                .text-yellow {
+                    font-size: 50px;
+                }
+                .text-white {
+                    font-size: 50px;
+                }
+                &__black-flag {
+                    left: 235px;
+                    .text-flag {
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                }
+            }
+            &__circle-delivery {
+                bottom: -70px;
+            }
+        }
+        &__right {
+            flex-direction: column;
+            &__timer {
+                margin-top: 10px;
+            }
+        }
+    }
+    @media (max-width: 490px) {
+        &__left {
+            &__text {
+                margin: 70px 0 50px 20px;
+                .text-yellow {
+                    font-size: 40px;
+                }
+                .text-white {
+                    font-size: 40px;
+                }
+                &__black-flag {
+                    left: auto;
+                    right: 0;
+                    top: -55px;
+                }
+            }
+            &__circle-delivery {
+                bottom: -70px;
+            }
+        }
+        &__right {
+            flex-direction: column;
+            &__timer {
+                padding: 15px 10px;
+                min-width: 100%;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+    }
+}

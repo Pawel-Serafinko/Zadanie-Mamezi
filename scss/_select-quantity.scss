@@ -1,0 +1,30 @@
+.select-quantity {
+    margin-top: 55px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        text-transform: uppercase;
+    }
+    .button {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        text-transform: uppercase;
+        border: 1px solid $gray;
+        padding: 2px 8px;
+        cursor: pointer;
+    }
+    .active {
+        background-color: $light-gray;
+        border-color: $dark;
+    }
+    @media (max-width: 576px) {
+        margin-top: 30px;
+    }
+}
